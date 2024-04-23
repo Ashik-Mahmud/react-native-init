@@ -4,7 +4,7 @@ import { Tabs } from "expo-router";
 
 const MainLayout = () => {
   return (
-    <Tabs screenOptions={{}}>
+    <Tabs>
       <Tabs.Screen
         name="home"
         options={{
@@ -29,7 +29,7 @@ const MainLayout = () => {
         }}
       />
       <Tabs.Screen
-        name="create"
+        name="categories"
         options={{
           headerShown: false,
           tabBarLabel: ({ focused }) => (
@@ -38,7 +38,7 @@ const MainLayout = () => {
                 focused ? "font-medium text-blue-500" : ""
               } text-xs`}
             >
-              Create
+              Categories
             </Text>
           ),
           tabBarIcon: ({ color, focused }) => (
@@ -46,7 +46,7 @@ const MainLayout = () => {
               className={`${focused ? "font-bold text-blue-500" : ""}`}
               style={{ color: color }}
             >
-              ➕
+              📦
             </Text>
           ),
         }}

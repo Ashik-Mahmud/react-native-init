@@ -1,14 +1,14 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 
-const Create = () => {
+const CategoryCard = () => {
   return (
-    <View className="flex-1 justify-center items-center">
-      <Text>Create</Text>
+    <View>
+      <Text>CategoryCard</Text>
     </View>
   );
 };
 
-export default Create;
+export default CategoryCard;
 
 const styles = StyleSheet.create({});
