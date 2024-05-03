@@ -9,6 +9,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import useGetMeals from "../../hooks/useGetMeals";
+import SelectBoxInput from "../../components/SelectBoxInput";
 
 const Home = () => {
   const [searchText, setSearchText] = useState("");
@@ -41,6 +42,7 @@ const Home = () => {
                 value={searchText}
                 onChangeText={handleOnChange}
               />
+              <SelectBoxInput />
             </View>
             <View className="flex flex-row items-center justify-center flex-wrap gap-4">
               {meals?.map((meal) => (

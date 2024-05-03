@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, View } from "react-native";
+import { Button, StyleSheet, Text, TextInput, View } from "react-native";
 import React, { useState } from "react";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import DatePicker from "react-native-date-picker";
@@ -11,18 +11,19 @@ const Profile = () => {
     <View className="flex items-center justify-center flex-1">
       <Text className="text-2xl">Date Picker</Text>
       <Button title="Open" onPress={() => setOpen(true)} />
-      {/* <DatePicker
-        modal
-        open={open}
-        date={date}
-        onConfirm={(date) => {
-          setOpen(false);
-          setDate(date);
-        }}
-        onCancel={() => {
-          setOpen(false);
-        }}
-      /> */}
+      <TextInput type="date" />
+      {open && (
+        <DateTimePicker
+          value={date}
+          onChange={(event, selectedDate) => {
+            const currentDate = selectedDate || date;
+            setOpen(Platform.OS === "ios");
+            setDate(currentDate);
+          }}
+          display="default"
+          mode="date"
+        />
+      )}
     </View>
   );
 };
